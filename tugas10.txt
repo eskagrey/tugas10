@@ -1,0 +1,26 @@
+NAMA	: SAIFUL KURNIAWAN A.
+NIM	: 16.4.00072
+
+#########################################################################
+
+## 1 BUAT TABEL MATAKULIAH DAN KRS
+create table akademik;
+
+use akademik;
+
+create table matakuliah(kdmk char(6) primary key not null, nmmk varchar(50) not null, sks int not null, prodi char(5) not null);
+
+create table krs(thakd char(4) not null, smst char(1) not null, nim char(10) not null, kdmk char(6) not null, primary key(thakd, smst, nim, kdmk));
+
+## 2 AKADEMIK SERVICE
+pada akademik-service.php ditambahkan sebuah fungsi untuk transaksi KRS.
+
+--------------------------------------------------------------------------
+
+JAWABAN TUGAS :
+
+1. dalam praktikum ini, transaksi KRS menggunakan fitur untuk mengamankan data yang masuk apabila terjadi kesalahan. yaitu pada fungsi if else setelah for. 
+apabila koneksi lancar dan tidak ada kesalahan, maka value akan diinput ke database. 
+apabila koneksi tidak stabil atau terjadi interupsi, maka fungsi rollback akan digunakan sehingga data tidak jadi diinputkan.
+
+2. terdapat di file akademik-client.php
